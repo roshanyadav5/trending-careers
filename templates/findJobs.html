@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="static/style.css">
+<style>
+#findJobsSection {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem auto;
+    text-align: center;
+}
+#formDiv{
+display: flex;
+flex-direction: column;
+}
+</style>
+{% include 'header.html' %}
+<div id="findJobsSection">
+<div id="formDiv" class="search-box slide-up">
+    <h2>Search for the Job...</h2>
+    <form method="POST" action="/find_jobs">
+
+        <input type="text" name="jobTitle" placeholder="Job Title or keyword" />
+        <input type="text" name="location" placeholder="Location" />
+        <button class="find btn-fill-hover" type="submit">Find Job</button>
+    </form>
+
+</div>
+</div>

@@ -8,39 +8,31 @@
   <script defer src="static/script.js"></script>
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">
-      <img style="border-radius: 50%;" src="/static/logo.png" alt="Job Finder Logo">
-      <div>
-        <h1>Job Finder</h1>
-        <p>Get your dream job</p>
-      </div>
-    </div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Find a Job</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
-    <div class="buttons">
-      <button class="btn register btn-fill-hover">Register</button>
-      <button class="btn login btn-fill-hover">Login</button>
-    </div>
-  </header>
 
+{% include 'header.html' %}
   <main class="hero">
     <div class="hero-text">
       <h2 class="fade-in">Find the<br><span>most exciting</span><br>startup jobs</h2>
       <div class="search-box slide-up">
-        <input type="text" placeholder="Job Title or keyword" />
-        <input type="text" placeholder="Location" />
-        <button class="btn find">Find Job</button>
+        <form method="POST" action="/find_jobs">
+
+        <input type="text" name="jobTitle" placeholder="Job Title or keyword" />
+        <input type="text" name="location" placeholder="Location" />
+        <button class="find btn-fill-hover" type="submit">Find Job</button>
+        </form>
         
       </div>
     </div>
     <div class="hero-image zoom-in">
-      <img src="http://192.168.1.68:5000/static/nabina.png" alt="Professional Person" />
+      <img src="/static/nabina.png" alt="Professional Person" />
     </div>
   </main>
+
+<div class="jobss">
+  <h2 style="transform: scale(1.5);">Trending Jobs</h2>
+{% include 'jobs-card.html' %}
+
+</div>
+
 </body>
 </html>
